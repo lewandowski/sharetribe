@@ -33,6 +33,19 @@ A link is represented as a JSON object with keys `type` and `id`. For example, t
 
 See the [example JSON structure](../app/services/custom_landing_page/example_data.rb).
 
+## Limited Markdown support
+
+The landing page has a limited Markdown support. Some value support a limited set of Markdown elements. The supported Markdown elements are:
+
+- Paragraph. Piece of text separated by two linebreaks (Example: `First paragraph\n\nSecond paragraph`)
+- Bold (Example: `**This will be bold**`)
+- Italic (Example: `**This will be bold**`)
+- Line break (two spaces and `\n`) (Example: `Add new line  \n...but don't add new paragraph`)
+- Bold+italic (Example: `***This will be bold and italic***`)
+- Strike through (Example: `~~This will be striked through~~`)
+- Underline (Example: `_This will be underlined_`)
+- Links (Example: `Go to [Sharetribe homepage](https://www.sharetribe.com)`)
+
 ## Settings
 
 The following values are set in `settings`:

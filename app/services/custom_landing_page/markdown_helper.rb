@@ -57,7 +57,15 @@ module CustomLandingPage
     # Read more: https://github.com/vmg/redcarpet#and-its-like-really-simple-to-use
     #
     def markdown
-      @markdown ||= Redcarpet::Markdown.new(LimitedHTMLMarkdownRenderer, autolink: true, tables: true)
+      @markdown ||= Redcarpet::Markdown.new(
+        LimitedHTMLMarkdownRenderer,
+        strikethrough: true,
+        underline: true,
+        filter_html: true, # do not allow any user-inputted HTML in the output.
+        no_images: true, # do not generate any <img> tags.
+        no_styles: true, # do not generate any <style> tags.
+        safe_links_only: true # only generate links for protocols which are considered safe.
+      )
     end
 
     # Deprecated
