@@ -1,5 +1,53 @@
 class LandingPageController < ActionController::Metal
 
+  class LimitedHTMLMarkdownRenderer < Redcarpet::Render::HTML
+
+    IGNORED_BLOCKS = [
+      'block_code',
+      'block_quote',
+      'block_html',
+      'footnotes',
+      'footnote_def',
+      'header',
+      'hrule',
+      'list',
+      'list_item',
+      # 'paragraph',
+      'table',
+      'table_row',
+      'table_cell',
+      'autolink',
+      'codespan',
+      # 'double_emphasis',
+      # 'emphasis',
+      'image',
+      # 'linebreak',
+      # 'link',
+      'raw_html',
+      # 'triple_emphasis',
+      # 'strikethrough',
+      'superscript',
+      # 'underline',
+      'highlight',
+      'quote',
+      'footnote_ref',
+    ].each do |ignored_block|
+      define_method ignored_block do |*|
+        nil
+      end
+    end
+  end
+
+  module MarkdownHelper
+    def render_markdown(str)
+      markdown.render(str).html_safe
+    end
+
+    def markdown
+      @markdown ||= Redcarpet::Markdown.new(LimitedHTMLMarkdownRenderer, autolink: true, tables: true)
+    end
+  end
+
   # Shorthand for accessing CustomLandingPage service namespace
   CLP = CustomLandingPage
 
@@ -27,6 +75,8 @@ class LandingPageController < ActionController::Metal
   # that you need to include url_helpers in order to use #url_for
   #
   include Rails.application.routes.url_helpers
+
+  helper MarkdownHelper
 
   CACHE_TIME = APP_CONFIG[:clp_cache_time].to_i.seconds
   CACHE_HEADER = "X-CLP-Cache"

@@ -295,7 +295,7 @@ module CustomLandingPage
         {"service": "linkedin", "url": "https://www.linkedin.com/company/2626583"},
         {"service": "pinterest", "url": "https://www.pinterest.com/"}
       ],
-      "copyright": "Copyright Marketplace Ltd 2016"
+      "copyright": "Copyright **Sharetribe Ltd**, 2016  \\n[Bulevardi 14, Helsinki, Finland](https://www.google.fi/maps/place/Bulevardi+14,+00120+Helsinki/)"
     }
   ],
 
