@@ -57,7 +57,7 @@ module CustomLandingPage
       "kind": "info",
       "variation": "single_column",
       "title": "Single column info section without background image and call to action button",
-      "paragraph": ["This is a single column info section without background image and call to action button."]
+      "paragraph": ["This is a single column info section without background image and call to action button.", "This is a single column info section without background image and call to action button."]
     },
     {
       "id": "single_info_without_cta",
@@ -225,7 +225,7 @@ module CustomLandingPage
         "id": "listings",
         "kind": "listings",
         "title": "Featured listings section",
-        "paragraph": "PLEASE NOTE: This section is NOT ENABLED by default. To enable this section, replace listing IDs with real IDs and add the section to the 'composition'. This section contains 3 featured listings",
+        "paragraph": ["PLEASE NOTE:", "This section is NOT ENABLED by default. To enable this section, replace listing IDs with real IDs and add the section to the 'composition'. This section contains 3 featured listings"],
         "button_color": {"type": "marketplace_data", "id": "primary_color"},
         "button_color_hover": {"type": "marketplace_data", "id": "primary_color_darken"},
         "button_title": "Browse all listings",
@@ -236,13 +236,38 @@ module CustomLandingPage
         "author_name_color_hover": {"type": "marketplace_data", "id": "primary_color"},
         "listings": [
             {
-                "listing": { "type": "listing", "id": 99999 }
+                "listing": { "type": "listing", "id": 8 }
             },
             {
-                "listing": { "type": "listing", "id": 99999 }
+                "listing": { "type": "listing", "id": 9 }
             },
             {
-                "listing": { "type": "listing", "id": 99999 }
+                "listing": { "type": "listing", "id": 10 }
+            }
+        ]
+    },
+    {
+        "id": "listings2",
+        "kind": "listings",
+        "title": "Featured listings section",
+        "paragraph": ["PLEASE NOTE: This section is NOT ENABLED by default. To enable this section, replace listing IDs with real IDs and add the section to the 'composition'. This section contains 3 featured listings"],
+        "button_color": {"type": "marketplace_data", "id": "primary_color"},
+        "button_color_hover": {"type": "marketplace_data", "id": "primary_color_darken"},
+        "button_title": "Browse all listings",
+        "button_path": {"type": "path", "id": "search"},
+        "price_color": {"type": "marketplace_data", "id": "primary_color"},
+        "no_listing_image_background_color": {"type": "marketplace_data", "id": "primary_color"},
+        "no_listing_image_text": {"type": "translation", "id": "no_listing_image"},
+        "author_name_color_hover": {"type": "marketplace_data", "id": "primary_color"},
+        "listings": [
+            {
+                "listing": { "type": "listing", "id": 8 }
+            },
+            {
+                "listing": { "type": "listing", "id": 9 }
+            },
+            {
+                "listing": { "type": "listing", "id": 10 }
             }
         ]
     },
@@ -286,6 +311,8 @@ module CustomLandingPage
     { "section": {"type": "sections", "id": "three_column_info_with_icons_and_buttons"}},
     { "section": {"type": "sections", "id": "three_column_info_without_icons_and_buttons"}},
     { "section": {"type": "sections", "id": "video"}},
+    { "section": {"type": "sections", "id": "listings"}},
+    { "section": {"type": "sections", "id": "listings2"}},
     { "section": {"type": "sections", "id": "footer"}}
   ],
 
